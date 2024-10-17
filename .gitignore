@@ -43,6 +43,7 @@ ENV/
 
 # Jupyter
 .ipynb_checkpoints/
+.gradio
 
 # Logs
 *.log
