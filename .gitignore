@@ -55,4 +55,18 @@ ENV/
 *.ear
 *.zip
 *.tar.gz
-*.rar
+*.rarezkl-test/test.pk
+# Ignore .vk and .pk files
+# Ignore large EZKL test files
+ezkl-test/test.pk
+ezkl-test/test.vk
+ezkl-test/test.pf
+ezkl-test/*.pk
+ezkl-test/*.vk
+ezkl-test/*.pf
+
+# Ignore compiled and model files
+# ezkl-test/*.compiled
+# ezkl-test/model.compiled
+# ezkl-test/network.compiled
+# ezkl-test/network.onnx
