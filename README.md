@@ -1,10 +1,16 @@
 # voizk-ML
 
-This hack failed several times and basically it's impossible with current tech to achieve the original goal and now it's time to explain why exactly. I'll start with describing how those goals were set, which research routes we followed, and then continue what limitations exactly we hit.
+First attempt at using voice as an authentication method without relying in centralized Big Tech ML servers (i.e. doing it privately or at least verifiably).
+
+### TL;DR:
+##### With the current ZKML tech the solution is either impossible or unfeasible.
+
+## Introduction
+In recent years, biometric authentication has become a popular method for secure access to devices and applications, voice being one of the most used for personal assistants. This approach, typically facilitated by machine learning models, provides a convenient, hands-free way to authenticate users based on unique vocal characteristics. However, most voice authentication systems today rely on centralized servers managed by large technology companies, which raises significant concerns about privacy and control over personal data. User voiceprints are often stored in centralized databases, leaving them vulnerable to breaches, surveillance, and unauthorized access. This setup conflicts with the growing demand for privacy-preserving technologies, particularly in sensitive applications where users prefer to keep biometric data secure and local. 
+
+To address these challenges, zero-knowledge (ZK) technology offers a promising path forward by enabling privacy-preserving voice authentication that does not rely on centralized servers or that can be verified. Using ZK proofs, devices can verify a user's identity without revealing or storing their voice data externally, ensuring that personal information remains private and under the user's control. This approach could eliminate the need for centralized machine learning models, allowing devices to locally and securely verify users with minimal data exposure. In this research, we explore whether the ZK tech allows us to actually build a voice authentication system in a decentralized, trustless or verifiable way (on the assumption that actually useful parts are somehow made to work).
 
 # Overall vision
-
-While it's hard to hack a properly secure biometric auth system from scratch that part specifically didn't concern us much, what we wanted to actually explore was whether the ZK tech allows us to actually build it in a decentralized / trustless / verified way (on the assumption that actually cool parts are somehow made to work)
 
 The cool part we never actually expected to work are ML model that can be quickly enough trained and used for inference during authentication. In a real system that part would require a lot of design work and testing, so we originally set the goal to just try and test already available examples of voice-related tools (both ML and OG) and see if they can be run in ZK runtimes like ZKML and ZKVM frameworks in any way that would give us proof of end-to-end-verification (like, as long as we can process the data is some way and generate a proof we can reasonably change the actual processing to suit future needs). So the core of our research was finding the right tech and see if it can run with those frameworks.
 
