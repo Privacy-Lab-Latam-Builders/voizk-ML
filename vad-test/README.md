@@ -83,16 +83,6 @@ ezkl.gen_settings(self.model_path, self.settings_path)
 Failed to generate settings: 
 [graph] [tract] Undetermined symbol in expression: sequence_length
 
-## Model 1 : Wav2Vec2
-
-### Runtime Error
-
-```
-ezkl.gen_settings(self.model_path, self.settings_path)
-```
-Failed to generate settings: 
-[graph] [tract] Undetermined symbol in expression: sequence_length
-
 ## Model 2 : Whipser Tiny
 
 ### Kernel Error 
