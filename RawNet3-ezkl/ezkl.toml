@@ -1,0 +1,5 @@
+[project]
+name = "RawNet3"
+
+[circuit]
+network = "network.onnx"
