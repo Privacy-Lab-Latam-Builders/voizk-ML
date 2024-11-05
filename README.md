@@ -2,11 +2,16 @@
 
 First attempt at using voice as an authentication method without relying in centralized Big Tech ML servers (i.e. doing it privately or at least verifiably).
 
-### TL;DR:
-##### With the current ZKML tech the solution is either impossible or unfeasible.
+**TL;DR: With the current ZKML tech the solution is either impossible or unfeasible. Most models fail at configuration on circuitation and ZKVMs are too limited still.**
 
 ## Introduction
-In recent years, biometric authentication has become a popular method for secure access to devices and applications, voice being one of the most used for personal assistants. This approach, typically facilitated by machine learning models, provides a convenient, hands-free way to authenticate users based on unique vocal characteristics. However, most voice authentication systems today rely on centralized servers managed by large technology companies, which raises significant concerns about privacy and control over personal data. User voiceprints are often stored in centralized databases, leaving them vulnerable to breaches, surveillance, and unauthorized access. This setup conflicts with the growing demand for privacy-preserving technologies, particularly in sensitive applications where users prefer to keep biometric data secure and local. 
+In recent years, biometric authentication has become a popular method for secure access to devices and applications, voice being one of the most used for personal assistants. This approach, typically facilitated by machine learning models, provides a convenient, hands-free way to authenticate users based on unique vocal characteristics. Also, voice is one of the most secure methods of authentication according to [Fundamentals of Biometric Technology
+](https://csu-sjsu.primo.exlibrisgroup.com/permalink/01CALS_SJO/1nj5q0c/cdi_walterdegruyter_books_10_1515_9781614516293_1).
+
+![Biometric authentication methods reliability](./img/biometric_methods.png)
+
+
+However, most voice authentication systems today rely on centralized servers managed by large technology companies, which raises significant concerns about privacy and control over personal data. User voiceprints are often stored in centralized databases, leaving them vulnerable to breaches, surveillance, and unauthorized access. This setup conflicts with the growing demand for privacy-preserving technologies, particularly in sensitive applications where users prefer to keep biometric data secure and local. 
 
 To address these challenges, zero-knowledge (ZK) technology offers a promising path forward by enabling privacy-preserving voice authentication that does not rely on centralized servers or that can be verified. Using ZK proofs, devices can verify a user's identity without revealing or storing their voice data externally, ensuring that personal information remains private and under the user's control. This approach could eliminate the need for centralized machine learning models, allowing devices to locally and securely verify users with minimal data exposure. In this research, we explore whether the ZK tech allows us to actually build a voice authentication system in a decentralized, trustless or verifiable way (on the assumption that actually useful parts are somehow made to work).
 
