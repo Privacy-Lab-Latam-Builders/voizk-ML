@@ -34,6 +34,7 @@ Turns out ZKVMs are still limited. We cannot process a large input there, most l
 LSTM or RNN model that can consume such cleaned and condensed input can work but requires training on a large enough data set (not as good for a few-shots prediction on just a couple samples users typically provide for authentication purposes) and we cannot use pre-trained models good with few-shots prediction within ZKML frameworks like EZKL.
 
 The first wall is hit on ZKVMs: If we cannot verify pre-processing we already cannot provide anything end-to-end verified.
+You can read more about our first approach, the questions we wrote down and some answers to those questions in our [FIRST APPROACH DOC](/FIRST_APPROACH.md)
 
 ### 2. Pretrained inference and proof
 
