@@ -75,23 +75,10 @@ Doesn't work in our samples since The WebRTC VAD only accepts 16-bit mono PCM au
 
 ## Model 1 : Wav2Vec2
 
-### Runtime Error
+### Kernel Error 
 
-```
-ezkl.gen_settings(self.model_path, self.settings_path)
-```
-Failed to generate settings: 
-[graph] [tract] Undetermined symbol in expression: sequence_length
-
-## Model 1 : Wav2Vec2
-
-### Runtime Error
-
-```
-ezkl.gen_settings(self.model_path, self.settings_path)
-```
-Failed to generate settings: 
-[graph] [tract] Undetermined symbol in expression: sequence_length
+The Kernel crashed while executing code in the current cell or a previous cell. 
+From the investigate in EZKL discord and github, transformer model require a lot of memory (~700GB)
 
 ## Model 2 : Whipser Tiny
 
