@@ -2,11 +2,16 @@
 
 First attempt at using voice as an authentication method without relying in centralized Big Tech ML servers (i.e. doing it privately or at least verifiably).
 
-### TL;DR:
-##### With the current ZKML tech the solution is either impossible or unfeasible.
+**TL;DR: With the current ZKML tech the solution is either impossible or unfeasible. Most models fail at configuration on circuitation and ZKVMs are too limited still.**
 
 ## Introduction
-In recent years, biometric authentication has become a popular method for secure access to devices and applications, voice being one of the most used for personal assistants. This approach, typically facilitated by machine learning models, provides a convenient, hands-free way to authenticate users based on unique vocal characteristics. However, most voice authentication systems today rely on centralized servers managed by large technology companies, which raises significant concerns about privacy and control over personal data. User voiceprints are often stored in centralized databases, leaving them vulnerable to breaches, surveillance, and unauthorized access. This setup conflicts with the growing demand for privacy-preserving technologies, particularly in sensitive applications where users prefer to keep biometric data secure and local. 
+In recent years, biometric authentication has become a popular method for secure access to devices and applications, voice being one of the most used for personal assistants. This approach, typically facilitated by machine learning models, provides a convenient, hands-free way to authenticate users based on unique vocal characteristics. Also, voice is one of the most secure methods of authentication according to [Fundamentals of Biometric Technology
+](https://csu-sjsu.primo.exlibrisgroup.com/permalink/01CALS_SJO/1nj5q0c/cdi_walterdegruyter_books_10_1515_9781614516293_1).
+
+![Biometric authentication methods reliability](./img/biometric_methods.png)
+
+
+However, most voice authentication systems today rely on centralized servers managed by large technology companies, which raises significant concerns about privacy and control over personal data. User voiceprints are often stored in centralized databases, leaving them vulnerable to breaches, surveillance, and unauthorized access. This setup conflicts with the growing demand for privacy-preserving technologies, particularly in sensitive applications where users prefer to keep biometric data secure and local. 
 
 To address these challenges, zero-knowledge (ZK) technology offers a promising path forward by enabling privacy-preserving voice authentication that does not rely on centralized servers or that can be verified. Using ZK proofs, devices can verify a user's identity without revealing or storing their voice data externally, ensuring that personal information remains private and under the user's control. This approach could eliminate the need for centralized machine learning models, allowing devices to locally and securely verify users with minimal data exposure. In this research, we explore whether the ZK tech allows us to actually build a voice authentication system in a decentralized, trustless or verifiable way (on the assumption that actually useful parts are somehow made to work).
 
@@ -29,6 +34,7 @@ Turns out ZKVMs are still limited. We cannot process a large input there, most l
 LSTM or RNN model that can consume such cleaned and condensed input can work but requires training on a large enough data set (not as good for a few-shots prediction on just a couple samples users typically provide for authentication purposes) and we cannot use pre-trained models good with few-shots prediction within ZKML frameworks like EZKL.
 
 The first wall is hit on ZKVMs: If we cannot verify pre-processing we already cannot provide anything end-to-end verified.
+You can read more about our first approach, the questions we wrote down and some answers to those questions in our [FIRST APPROACH DOC](/FIRST_APPROACH.md)
 
 ### 2. Pretrained inference and proof
 
@@ -45,8 +51,7 @@ Every piece of the diagram works as expected in a local execution environment, b
 
 
 ## Conclusion
-Our main conclusion is a soft-negative: we cannot do this with the current state of ZK tech. The most common answer I hear on many questions to the tune of "can we use ZK to verify this complex thing?". It's not impossible in theory, just in practice right now.
+Our main conclusion is a soft-negative: we cannot do this with the current state of ZK tech. It's not impossible in theory, just in practice right now.
 
 The unfortunate answer is the tech is not ready to manage complex things and we should change the idea to something so simple it doesn't have to process any raw data and only deals with nice discrete series and ideally avoid computationally or otherwise complex operations. I thought about just showing a two-liner in rust concatenating two strings and explaining that it's about the limit of what the tech can run and finish proof generation this week but I don't try to be critical. We just need to develop better core tech here.
 
-This writeup should be extended with actual examples of what we did and charts of the successful parts of research (we did manage to extract spectrograms and MFCCs from raw sound in python code using a library, we just cannot do the same in ZKVM easily) and failure logs (mostly it's ezkl settings generator failing over sequence operations, over and over on every model we tried, but that is our main research result here: typical software or ML engineering approach fails with ZK tooling, anything needs to be super-simplified and often rebuilt from scratch)
