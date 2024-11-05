@@ -45,8 +45,7 @@ Every piece of the diagram works as expected in a local execution environment, b
 
 
 ## Conclusion
-Our main conclusion is a soft-negative: we cannot do this with the current state of ZK tech. The most common answer I hear on many questions to the tune of "can we use ZK to verify this complex thing?". It's not impossible in theory, just in practice right now.
+Our main conclusion is a soft-negative: we cannot do this with the current state of ZK tech. It's not impossible in theory, just in practice right now.
 
 The unfortunate answer is the tech is not ready to manage complex things and we should change the idea to something so simple it doesn't have to process any raw data and only deals with nice discrete series and ideally avoid computationally or otherwise complex operations. I thought about just showing a two-liner in rust concatenating two strings and explaining that it's about the limit of what the tech can run and finish proof generation this week but I don't try to be critical. We just need to develop better core tech here.
 
-This writeup should be extended with actual examples of what we did and charts of the successful parts of research (we did manage to extract spectrograms and MFCCs from raw sound in python code using a library, we just cannot do the same in ZKVM easily) and failure logs (mostly it's ezkl settings generator failing over sequence operations, over and over on every model we tried, but that is our main research result here: typical software or ML engineering approach fails with ZK tooling, anything needs to be super-simplified and often rebuilt from scratch)
