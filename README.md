@@ -53,6 +53,10 @@ We tried several of them just to see how inference works and what outputs will b
 
 Every piece of the diagram works as expected in a local execution environment, but does not work in a ZKVM or using a ZKML framework.
 
+## Video Demo
+
+[![](https://img.youtube.com/vi/A-h48vPDYl4/0.jpg)](https://www.youtube.com/watch?v=A-h48vPDYl4)
+
 ## Conclusion
 
 Our main conclusion is a soft-negative: we cannot do this with the current state of ZK tech. It's not impossible in theory, just in practice right now.
